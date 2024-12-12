@@ -5,7 +5,9 @@ const app = express(); //Permite configurar al servidor web
 
 const port = 8000;
 
-app.use( express.json() );
+//Con el .use se definen los midleware
+
+app.use( express.json() ); //Sirve para convertir un json en un objeto de JavaScript
 app.use( express.urlencoded({ extended: true }) );
 
 const restaurantes = [
@@ -33,7 +35,7 @@ const restaurantes = [
 
 ]
 
-
+// app.gert ('/restaurantes', (_req,res)) --> Todo esto es una ruta
 
 app.get('/restaurantes', (_req,res) => {
     res.json(restaurantes);
