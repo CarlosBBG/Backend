@@ -10,6 +10,17 @@ const port = 8000;
 app.use( express.json() ); //Sirve para convertir un json en un objeto de JavaScript
 app.use( express.urlencoded({ extended: true }) );
 
+require('./config/mongoose.config');
+
+const allRestaurantesRoutes = require('./routes/restaurante.routes');
+allRestaurantesRoutes(app);
+
+
+app.listen(port, () => {
+  console.log("Server listening at port", port);
+});
+/*
+
 const restaurantes = [
     {
         id: "1",
@@ -86,4 +97,4 @@ app.get('/', function (req, res) {
 
 app.listen(port, function () {
     console.log('server.js escuchando en el puerto', port);
-});
+});*/
