@@ -1,4 +1,6 @@
 //Sin especificar una ruta, busca en el node_modules
+const cors = require('cors'); 
+
 const express = require('express'); //require --> Importar un módulo
 
 const app = express(); //Permite configurar al servidor web
@@ -7,8 +9,9 @@ const port = 8000;
 
 //Con el .use se definen los midleware
 
+app.use( cors() );
 app.use( express.json() ); //Sirve para convertir un json en un objeto de JavaScript
-app.use( express.urlencoded({ extended: true }) );
+app.use( express.urlencoded({ extended: true }) ); 
 
 require('./config/mongoose.config');
 
