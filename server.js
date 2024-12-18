@@ -17,7 +17,9 @@ require('./config/mongoose.config');
 
 const allRestaurantesRoutes = require('./routes/restaurante.routes');
 allRestaurantesRoutes(app);
-
+ 
+const allUsuariosRoutes = require('./routes/usuario.routes');
+allUsuariosRoutes(app); 
 
 app.listen(port, () => {
   console.log("Server listening at port", port);
