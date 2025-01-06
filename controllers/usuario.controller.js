@@ -7,7 +7,6 @@ const generateToken = (id) => {
     return jwt.sign({ id }, "password", { expiresIn: '30d' })
 }
 
-
 module.exports.createUsuario = async (request, response) => {
     const { email, password } = request.body;
     if (!email || !password) {
