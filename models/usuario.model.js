@@ -9,6 +9,10 @@ const UsuarioSchema = new mongoose.Schema ({
     password: {
         type: String,
         required: [true, "El password es requerido"]
+    },
+    rol:{
+        type: String,
+        required: [true, "El rol es requerido"]
     }
 }, {
     collection: 'Usuarios'
