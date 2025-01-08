@@ -1,5 +1,5 @@
 const RestauranteController = require('../controllers/restaurante.controller');
-const { protect, admin,admin2 } = require('../middlewares/protect')
+const { protect, admin, admin2 } = require('../middlewares/protect')
 
 module.exports = function (app) {
     app.post('/restaurantes', admin, RestauranteController.createRestaurante);

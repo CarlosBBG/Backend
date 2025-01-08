@@ -58,6 +58,7 @@ module.exports.admin2 = async (req, res, next) => {
             token = token.split(' ')[1];
             console.log('Token extraído: ', token);
             const decoded = jwt.verify(token, "password");
+            console.log(decoded);
             if (decoded.rol === 'admin') {
                 next();
             } else{
